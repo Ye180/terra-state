@@ -1,0 +1,131 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // FILES — Quels fichiers Biome doit traiter.
+    // "includes" remplace l'ancien couple include/ignore de Biome 1.x.
+    // Un motif préfixé de "!" exclut. "**" = tous les fichiers, puis on retire
+    // ce qui est généré ou n'a pas besoin d'être touché.
+    // ─────────────────────────────────────────────────────────────────────
+    "files": {
+        "ignoreUnknown": true,
+        "includes": [
+            "**",
+            "!**/.next",
+            "!**/node_modules",
+            "!**/dist",
+            "!**/build",
+            "!**/coverage",
+            "!**/*.min.*",
+            "!**/pnpm-lock.yaml",
+            // Fichier généré par Next : on le laisse tranquille.
+            "!next-env.d.ts"
+        ]
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // FORMATTER — Règles de mise en forme communes à tous les langages.
+    // Remplace Prettier. Les options spécifiques à JS/TS sont plus bas.
+    // ─────────────────────────────────────────────────────────────────────
+    "formatter": {
+        "enabled": true,
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 100,
+        "lineEnding": "lf"
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // ASSIST — Actions automatiques non liées au lint (ex : tri des imports).
+    // En Biome 2.x, l'organisation des imports vit ici (plus dans le linter).
+    // ─────────────────────────────────────────────────────────────────────
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // LINTER — Analyse statique (remplace ESLint).
+    // ─────────────────────────────────────────────────────────────────────
+    "linter": {
+        "enabled": true,
+
+        "domains": {
+            "next": "recommended",
+            "react": "recommended"
+        },
+
+        "rules": {
+            "recommended": true,
+            "correctness": {
+                "noUnusedImports": "warn",
+                "noUnusedVariables": "warn"
+            },
+            "suspicious": {
+                "noConsole": {
+                    "level": "warn",
+                    "options": { "allow": ["warn", "error", "info"] }
+                }
+            },
+            "style": {
+                "useConst": "error",
+                "useTemplate": "warn"
+            }
+        }
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // JAVASCRIPT / TYPESCRIPT — Options de format propres à JS/TS/JSX.
+    // ─────────────────────────────────────────────────────────────────────
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "double",
+            "jsxQuoteStyle": "double",
+            "semicolons": "always",
+            "trailingCommas": "all",
+            "arrowParentheses": "always",
+            "bracketSpacing": true,
+            "quoteProperties": "asNeeded"
+        }
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // JSON — Format des fichiers .json / .jsonc (comme celui-ci).
+    // ─────────────────────────────────────────────────────────────────────
+    "json": {
+        "formatter": {
+            "enabled": true,
+            "trailingCommas": "none"
+        },
+        "parser": {
+            "allowComments": true
+        }
+    },
+
+    // ─────────────────────────────────────────────────────────────────────
+    // CSS — Format + lint des fichiers .css (Tailwind v4 utilise du CSS pur).
+    // ─────────────────────────────────────────────────────────────────────
+    "css": {
+        "parser": {
+            "tailwindDirectives": true
+        },
+        "formatter": {
+            "enabled": true,
+            "quoteStyle": "double"
+        },
+        "linter": {
+            "enabled": true
+        }
+    }
+}
