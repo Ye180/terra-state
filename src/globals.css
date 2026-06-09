@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@theme inline {
+    --color-background: #f3f1eb;
+    --color-foreground: var(--foreground);
+    --color-dark: #1a1f26;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #1a1a1a;
+    --color-footer: #333333;
+    --color-gray: #9ca3a0;
+    --color-border: #e5e2dc;
+    --font-sans: "Arimo", sans-serif;
+}
+
+::selection {
+    background-color: #ff0000;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+html,
+body {
+    width: 100%;
+    color: var(--color-background);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@layer components {
+}
