@@ -1,9 +1,7 @@
-import Logo from "@/components/shared/logo";
+import HomeView from "@/features/home/view";
 
 export default function Home() {
     return (
-        <div className="flex flex-col flex-1 font-sans">
-            <Logo />
-        </div>
+        <HomeView />
     );
 }
