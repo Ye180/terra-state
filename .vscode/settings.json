@@ -1,5 +1,8 @@
 {
-  "editor.defaultFormatter": "biomejs.biome",
-  "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true
+    "editor.defaultFormatter": "biomejs.biome",
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "'Fira-code', monospace",
+    "editor.wordWrap": "wordWrapColumn",
+    "workbench.colorTheme": "Experimental Dark"
 }
