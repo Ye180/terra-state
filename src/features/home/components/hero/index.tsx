@@ -50,7 +50,7 @@ const HeroView = () => {
 
          gsap.fromTo(".hero", {
              opacity: .5,
-             scale: 0.9,
+             scale:1.03,
          }, {
             opacity: 1,
             scale: 1,
