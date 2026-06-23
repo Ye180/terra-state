@@ -4,5 +4,8 @@
     "editor.formatOnSave": true,
     "editor.fontFamily": "'Fira-code', monospace",
     "editor.wordWrap": "wordWrapColumn",
-    "workbench.colorTheme": "Experimental Dark"
+    "workbench.colorTheme": "Experimental Dark",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit"
+    }
 }

@@ -171,7 +171,7 @@ body {
 }
 
 @layer components {
-     nav {
+    nav {
         div {
             @apply flex items-center justify-between;
         }
@@ -211,17 +211,16 @@ body {
     }
 
     .about {
-        @apply text-gray px-8 py-8 space-y-4 lg:py-28 lg:space-y-14 md:h-screen ;
+        @apply text-gray px-8 py-8 space-y-4 lg:py-28 lg:space-y-14 md:h-screen;
 
         .description {
             @apply text-[1.73rem] md:text-3xl lg:text-5xl leading-normal font-semibold;
         }
     }
 
-    /* .service {
-        @apply px-8 flex flex-col max-md:items-center lg:justify-between md:items-end  ;
-    } */
-
+    .service {
+        @apply flex max-lg:gap-y-14 items-center lg:items-end justify-between max-lg:flex-col-reverse lg:px-8;
+    }
 }
 
 :root {
@@ -294,13 +293,13 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
-  html {
-    @apply font-sans;
+    html {
+        @apply font-sans;
     }
 }
