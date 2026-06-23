@@ -6,8 +6,8 @@ function HomeView() {
         <div className="flex flex-col flex-1 font-sans  space-y-14">
           
             <HeroView />
-
             <AboutView />
+            {/* <Service />git a */}
 
               
             <div className="h-[200vh] "></div>
