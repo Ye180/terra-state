@@ -1,14 +1,24 @@
-import type { Metadata } from "next";
-import "../globals.css";
-import { Geist } from "next/font/google";
+import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { Geist } from "next/font/google";
+import "../globals.css";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-    title: "Terra .",
-    description:
-        "Terra est une plateforme de pointe pour la gestion et la visualisation des meilleurs établissements.",
+    ...siteConfig.meta,
+    other: {
+        "application/ld+json": JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.url,
+            logo: `${siteConfig.url}/logo.png`,
+            description:
+                "Terra est une plateforme de gestion et de visualisation des meilleurs établissements architecturaux.",
+        }),
+    },
 };
 
 export default function RootLayout({
