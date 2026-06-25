@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 import { SERVICES } from "@/components/constants";
 import {
     Accordion,
@@ -6,7 +8,6 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 const Service = () => {
     return (

@@ -1,5 +1,7 @@
 import AboutView from "../components/about";
+import Features from "../components/features";
 import HeroView from "../components/hero";
+import Inovative from "../components/inovative";
 import Service from "../components/service";
 
 function HomeView() {
@@ -8,8 +10,10 @@ function HomeView() {
             <HeroView />
             <AboutView />
             <Service />
+            <Inovative />
+            <Features />
 
-            <div className="h-[200vh] "></div>
+            
         </div>
     );
 }

@@ -46,11 +46,24 @@
     // ASSIST — Actions automatiques non liées au lint (ex : tri des imports).
     // En Biome 2.x, l'organisation des imports vit ici (plus dans le linter).
     // ─────────────────────────────────────────────────────────────────────
+
     "assist": {
-        "enabled": true,
         "actions": {
             "source": {
-                "organizeImports": "on"
+                "organizeImports": {
+                    "level": "on",
+                    "options": {
+                        "groups": [
+                            [":BUN:", ":NODE:"],
+                            ":BLANK_LINE:",
+                            [":PACKAGE:", "!@myown/**"],
+                            ":BLANK_LINE:",
+                            "@myown/**",
+                            ":BLANK_LINE:",
+                            [":ALIAS:", ":PATH:"]
+                        ]
+                    }
+                }
             }
         }
     },

@@ -12,7 +12,7 @@ const AboutView = () => {
         
         gsap.to(aboutText.words, {
             scrollTrigger: {
-                trigger: ".about",
+                trigger: "#about",
                 start: "top top",
                 end: "bottom +600px",
                 // markers: true,
@@ -26,7 +26,7 @@ const AboutView = () => {
     });
 
   return (
-      <div className="about" >
+      <div id="about" className="about" >
           <div className="flex-between text-sm">
               <p className="font-light">About</p>
               <p className="text-dark"><span>©</span>2025</p>

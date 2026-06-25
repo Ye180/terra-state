@@ -221,6 +221,33 @@ body {
     .service {
         @apply flex max-lg:gap-y-14 items-center lg:items-end justify-between max-lg:flex-col-reverse lg:px-8;
     }
+
+    .inovative {
+        .container-inovation {
+            @apply mx-auto p-12;
+
+            h1 {
+                @apply font-normal text-white text-6xl tracking-tighter;
+            }
+
+            .card-components {
+                @apply flex flex-col gap-4 w-110 rounded-2xl aspect-4.5/5 relative overflow-hidden p-3 bg-white relative;
+
+                .container-card {
+                    @apply size-full overflow-hidden bg-amber-900/50 rounded-lg relative flex flex-col items-end justify-end p-4;
+
+                    .description-card {
+                        @apply bg-white text-dark w-2/3 h-1/2 rounded-lg overflow-hidden flex flex-col justify-between p-4 relative z-20;
+
+                        h4 {
+                            @apply text-[0.9rem] font-semibold;
+                        }
+                    }
+                }
+            }
+        }
+        @apply flex flex-col gap-4;
+    }
 }
 
 :root {
