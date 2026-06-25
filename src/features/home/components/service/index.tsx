@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 const Service = () => {
     return (
-        <section className="h-[70vh] service text-dark px-16 flex ">
+        <section id="nos-services" className="h-[70vh] service text-dark px-16 flex ">
             <div className="space-y-5">
                 <div
                     className=" w-[95vw] max-lg:h-120 lg:w-120 lg:h-full aspect-square rounded-2xl relative overflow-hidden"

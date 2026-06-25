@@ -154,3 +154,39 @@ export const FEATURES = [
       "Nous transformons vos idées en succès concrets grâce à une méthodologie rigoureuse et éprouvée. Faites le choix d'une infrastructure fiable, sécurisée et parfaitement adaptée aux exigences de votre secteur. ",
   },
 ];
+
+
+export const NAV_ITEMS = [
+    { label: "Accueil", href: "/", isUnique: false },
+    { label: "A propos de nous", href: "/#a-propos-de-nous", isUnique: false },
+    { label: "Nos services", href: "/#nos-services", isUnique: false },
+    { label: "Designes Inovants", href: "/#design-inovants", isUnique: false },
+    { label: "Nos caracteristiques", href: "/#nos-caracteristiques", isUnique: false },
+    { label: "Contact", href: "/#contact", isUnique: true },
+];
+
+export const FOOTER_CONTACT = {
+    phone: "+225 01 02 03 04 05",
+    email: "terra@gmail.com",
+    address: ["Abidjan, Côte d'Ivoire", "Plateau, Quartier 2"],
+};
+
+export const FOOTER_LEGAL = [
+    { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+    { label: "Conditions d'utilisation", href: "/conditions-d-utilisation" },
+];
+
+export const FOOTER_NAV = [
+    { label: "Accueil", href: "/", isUnique: false },
+    { label: "A propos de nous", href: "/#a-propos-de-nous", isUnique: false },
+    { label: "Nos services", href: "/#nos-services", isUnique: false },
+    { label: "Design Inovants", href: "/#designes-inovants", isUnique: false },
+    { label: "Nos caracteristiques", href: "/#nos-caracteristiques", isUnique: false },
+    { label: "Contact", href: "/#contact", isUnique: true },
+];
+
+export const FOOTER_SOCIALS = [
+    { label: "Instagram", href: "https://instagram.com" },
+    { label: "Twitter", href: "https://twitter.com" },
+    { label: "Facebook", href: "https://facebook.com" },
+];

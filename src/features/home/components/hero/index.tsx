@@ -22,11 +22,6 @@ const HeroView = () => {
         setCurentIndex(newIndex);
     };
 
-    const goToIndex = (indexOfSide: number) => {
-        const index = (curentIndex + indexOfSide + totalSlides) % totalSlides;
-        return HOME[index];
-    };
-
     useEffect(() => {
         const interval = setInterval(() => {
             setCurentIndex((prev) => (prev + 1) % totalSlides);
