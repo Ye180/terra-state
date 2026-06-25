@@ -31,8 +31,8 @@ const Service = () => {
             </div>
 
             <div className="h-130 flex flex-col justify-between ">
-                <div className="flex-between text-gray text-sm">
-                    <p className="font-light">Nos Services</p>
+                <div className="title-section">
+                    <p>Nos Services</p>
                 </div>
                 <Accordion
                     type="single"

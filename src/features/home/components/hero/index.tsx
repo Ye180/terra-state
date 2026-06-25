@@ -1,15 +1,19 @@
 "use client";
 
-import { HOME } from "@/components/constants";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { HOME } from "@/components/constants";
+import { layerStyle } from "@/components/shared/layer-styles";
 import Navbar from "../nav";
 import NumberSection from "./number";
 
 const HeroView = () => {
-
     const [curentIndex, setCurentIndex] = useState(0);
+
+    const container = useRef<HTMLDivElement>(null);
+    const frontRef = useRef<HTMLDivElement>(null);
 
     const totalSlides = HOME.length;
 
@@ -23,89 +27,95 @@ const HeroView = () => {
         return HOME[index];
     };
 
-
     useEffect(() => {
-        setInterval(()=>{
+        const interval = setInterval(() => {
             setCurentIndex((prev) => (prev + 1) % totalSlides);
         }, 5000);
+
+        return () => clearInterval(interval);
     }, []);
 
-
     useGSAP(() => {
-         gsap.fromTo(
-            ".hero",
+        gsap.fromTo(
+            ".title",
             {
                 opacity: 0,
+                yPercent: 100,
+                height: 0,
+                ease: "power2.out",
             },
             {
-                duration: 0.5,
                 opacity: 1,
+                yPercent: 0,
+                height: "auto",
             },
         );
-    }, [])
 
-
-
-    useGSAP(() => {
-
-         gsap.fromTo(".hero", {
-             opacity: .5,
-             scale:1.03,
-         }, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.5,
-         });
-
-        
-       
-        gsap.fromTo(".title", {
-            opacity: 0,
-            yPercent: 100,
-            height: 0,
-            ease: "power2.out",
-            
-        },
+        gsap.fromTo(
+            ".subtitle",
             {
-            opacity: 1,
-            yPercent: 0,
-            height: "auto"
-                
-        });
-
-        gsap.fromTo(".subtitle", {
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            delay: 0.8,
-        },
-        {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.out",
-            delay: 0.8,
-        });
+                opacity: 0,
+                duration: 0.5,
+                ease: "power2.out",
+                delay: 0.8,
+            },
+            {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.out",
+                delay: 0.8,
+            },
+        );
     }, [curentIndex]);
+
+    const prevImage = useRef(HOME[curentIndex].image);
+
+    useGSAP(
+        () => {
+            const front = frontRef.current;
+            if (!front) return;
+
+            gsap.fromTo(
+                front,
+                { opacity: 0, scale: 1 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        prevImage.current = HOME[curentIndex]?.image;
+                    },
+                },
+            );
+        },
+        { dependencies: [HOME[curentIndex]?.image], scope: container },
+    );
 
     return (
         <div className="w-full h-screen py-3 px-3">
-            <div className="bg-amber-100 h-full rounded-xl overflow-hidden relative hero"
-                style={{
-                    backgroundImage: `url('${goToIndex(curentIndex).image}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",   
-                    backgroundRepeat: "no-repeat",
-                }}
+            <div
+                ref={container}
+                className="bg-amber-100 h-full rounded-xl overflow-hidden relative hero"
             >
+                <div className="absolute inset-0" style={layerStyle(prevImage.current)} />
+                <div
+                    ref={frontRef}
+                    className="absolute inset-0"
+                    style={layerStyle(HOME[curentIndex].image)}
+                />
+
                 <div className="brown-bg" />
                 <Navbar />
                 <div className="max-lg:p-4 max-lg:w-full abs-bottom p-8 w-full lg:w-1/2 leading-tight lg:space-y-8 space-y-4">
-                    <h1 className="title overflow-hidden">{goToIndex(curentIndex).title}</h1>
+                    <h1 className="title overflow-hidden">{HOME[curentIndex].title}</h1>
 
                     <div className="flex max-lg:flex-col max-lg:items-center gap-2 lg:gap-8 justify-start text-lg subtitle">
-
-                        {goToIndex(curentIndex).feature.map((feature, index) => (
-                            <p key={index} className="gap-2 lg:bg-black px-4 lg:py-1 rounded-full">
+                        {HOME[curentIndex].feature.map((feature) => (
+                            <p
+                                key={feature}
+                                className="gap-2 lg:bg-black px-4 lg:py-1 rounded-full"
+                            >
                                 <span className="point" />
                                 <span>{feature}</span>
                             </p>

@@ -107,7 +107,7 @@ export const INNOVATION = [
   {
     id: "innovation-8",
     title: "Éducation numérique",
-     image: "/assets/inovation/home-12.jpg",
+     image: "/assets/inovation/home-13.jpg",
     description: [
       "Des outils interactifs pour apprendre autrement",
       "Une pédagogie adaptée aux nouvelles générations",
@@ -116,7 +116,7 @@ export const INNOVATION = [
   {
     id: "innovation-9",
     title: "Économie circulaire",
-    image: "/assets/inovation/home-12.jpg",
+    image: "/assets/inovation/home-14.jpg",
     description: [
       "Valorisation des ressources et recyclage",
       "Réduction des déchets au quotidien",
@@ -125,10 +125,32 @@ export const INNOVATION = [
   {
     id: "innovation-10",
     title: "Innovation industrielle",
-    image: "/assets/inovation/home-12.jpg",
+    image: "/assets/inovation/home-15.jpg",
     description: [
       "Automatisation des processus de production",
       "Des solutions performantes et durables",
     ],
+  },
+];
+
+export const FEATURES = [
+  {
+    id: "feature-1",
+    title: "Nos atouts majeurs",
+    image: "/assets/features/home-18.jpg",
+    description: "Découvrez des fonctionnalités uniques et des solutions innovantes conçues spécifiquement pour propulser votre activité. Notre expertise vous accompagne au quotidien pour maximiser vos résultats et devancer la concurrence.",
+  },
+  {
+    id: "feature-2",
+    title: "Caractéristiques clés uniques",
+    image: "/assets/features/home-19.jpg",
+    description: "Profitez d'une interface intuitive et d'outils performants qui simplifient vos processus métier au quotidien. Gagnez un temps précieux grâce à une automatisation intelligente et un support technique toujours disponible.",
+  },
+  {
+    id: "feature-3",
+    title: "Pourquoi nous choisir ?",
+    image: "/assets/features/home-20.jpg",
+    description:
+      "Nous transformons vos idées en succès concrets grâce à une méthodologie rigoureuse et éprouvée. Faites le choix d'une infrastructure fiable, sécurisée et parfaitement adaptée aux exigences de votre secteur. ",
   },
 ];
