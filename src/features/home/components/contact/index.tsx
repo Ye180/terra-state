@@ -1,22 +1,38 @@
 "use client";
+
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
+import { layerStyle } from "@/components/shared/layer-styles";
 
 const Contact = () => {
-    useGSAP(() => {});
+    const containerContact = useRef<HTMLDivElement>(null);
+    useGSAP(
+        () => {
+            const containerContactElement = containerContact.current;
+
+            gsap.from(containerContactElement, {
+                scrollTrigger: {
+                    trigger: containerContactElement,
+                    start: "top 80%",
+                    toggleActions: "play pause resume pause",
+                    once: true,
+                },
+                opacity: 0,
+                scale: 0.9,
+                duration: 1,
+            });
+        },
+        { scope: containerContact },
+    );
 
     return (
-        <section id="contact" className="contact">
-            <div
-                className="container-contact "
-                style={{
-                    backgroundImage: "url('assets/images/home-5.jpg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
+        <section ref={containerContact} id="contact" className="contact">
+            <div className="container-contact " style={layerStyle("assets/images/home-5.jpg")}>
                 <div className="brown-bg" />
 
-                <div className="card-contact">
+                <div className="card-contact formulaire">
                     <div className="text-center space-y-4">
                         <h4 className="text-2xl font-semibold text-white">Entrer en contact</h4>
                         <p className="text-white text-[0.75rem]">
@@ -25,7 +41,7 @@ const Contact = () => {
                         </p>
                     </div>
 
-                    <div className="space-y-4 text-dark">
+                    <div className="space-y-4 text-dark ">
                         <div className="grid-2-center">
                             <input type="text" placeholder="Enter votre email" />
                             <input type="text" placeholder="Enter votre message" />

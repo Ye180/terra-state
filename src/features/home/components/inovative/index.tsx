@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 import { INNOVATION } from "@/components/constants";
+import { layerStyle } from "@/components/shared/layer-styles";
 import CardComponents from "./card-components";
 
 const Inovative = () => {
@@ -28,11 +29,7 @@ const Inovative = () => {
             <section id="design-inovants" className="inovative ">
                 <div
                     className=" container-inovation"
-                    style={{
-                        backgroundImage: "url('assets/images/home-5.jpg')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                    }}
+                    style={layerStyle("assets/images/home-5.jpg")}
                 >
                     <div className="brown-bg" />
                     <div className="z-30 relative h-full flex flex-col justify-around">
