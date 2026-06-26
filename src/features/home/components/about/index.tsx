@@ -11,7 +11,7 @@ const AboutView = () => {
 
         gsap.to(aboutText.words, {
             scrollTrigger: {
-                trigger: "#about",
+                trigger: "#a-propos-de-nous",
                 start: "top top",
                 end: "bottom +600px",
                 // markers: true,
