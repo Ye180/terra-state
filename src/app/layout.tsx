@@ -15,7 +15,7 @@ export const metadata: Metadata = {
             "@type": "Organization",
             name: siteConfig.name,
             url: siteConfig.url,
-            logo: `${siteConfig.url}/logo.png`,
+            logo: `${siteConfig.url}/assets/terra.png`,
             description:
                 "Terra est une plateforme de gestion et de visualisation des meilleurs établissements architecturaux.",
         }),
@@ -28,7 +28,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html className={cn("h-full antialiased font-sans", "font-sans", geist.variable)} lang="en">
+        <html className={cn("h-full antialiased font-sans", "font-sans", geist.variable)} lang="fr">
+            <head>
+                <link
+                    rel="preload"
+                    href="/assets/images/home-1.jpg"
+                    as="image"
+                    fetchPriority="high"
+                />
+            </head>
             <body>{children}</body>
         </html>
     );

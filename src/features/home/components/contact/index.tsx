@@ -1,10 +1,9 @@
 "use client";
 
+import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import Image from "next/image";
 import { useRef } from "react";
-
-import { layerStyle } from "@/components/shared/layer-styles";
 
 const Contact = () => {
     const containerContact = useRef<HTMLDivElement>(null);
@@ -29,7 +28,15 @@ const Contact = () => {
 
     return (
         <section ref={containerContact} id="contact" className="contact">
-            <div className="container-contact" style={layerStyle("assets/images/home-5.jpg")}>
+            <div className="container-contact">
+                <Image
+                        src="/assets/images/home-5.jpg"
+                        alt=""
+                        fill
+                        className="object-cover object-center"
+                        aria-hidden="true"
+                        sizes="100vw"
+                    />
                 <div className="brown-bg" />
 
                 <div className="card-contact formulaire">

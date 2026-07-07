@@ -57,7 +57,15 @@ export const siteConfig = {
             siteName: 'Terra',
             title: 'Terra — Gestion et visualisation des meilleurs établissements architecturaux',
             description:
-                "Terra est une plateforme de gestion et de visualisation des meilleurs établissements architecturaux. Numéros en version digitale et physique."
+                "Terra est une plateforme de gestion et de visualisation des meilleurs établissements architecturaux. Numéros en version digitale et physique.",
+            images: [
+                {
+                    url: '/assets/terra.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'Terra — Établissements architecturaux'
+                }
+            ]
         },
 
         twitter: {

@@ -1,14 +1,11 @@
 "use client";
+import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
 import { useRef } from "react";
 
 import { INNOVATION } from "@/components/constants";
-import { layerStyle } from "@/components/shared/layer-styles";
 import CardComponents from "./card-components";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Inovative = () => {
     const section = useRef<HTMLElement>(null);
@@ -42,7 +39,15 @@ const Inovative = () => {
 
     return (
         <section ref={section} id="design-inovants" className="inovative  py-8!">
-            <div className=" container-inovation" style={layerStyle("assets/images/home-5.jpg")}>
+            <div className=" container-inovation">
+                <Image
+                        src="/assets/images/home-5.jpg"
+                        alt=""
+                        fill
+                        className="object-cover object-center"
+                        aria-hidden="true"
+                        sizes="100vw"
+                    />
                 <div className="brown-bg" />
                 <div className="z-30 relative h-full flex flex-col justify-around">
                     <div className="z-30 relative">

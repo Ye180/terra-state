@@ -1,12 +1,12 @@
 "use client";
 
+import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 
 import { HOME } from "@/components/constants";
-import { layerStyle } from "@/components/shared/layer-styles";
 import { CheckCircleIcon } from "lucide-react";
+import Image from "next/image";
 import Navbar from "../nav";
 import NumberSection from "./number";
 
@@ -94,12 +94,26 @@ const HeroView = () => {
                 ref={container}
                 className="bg-amber-100 h-full rounded-xl overflow-hidden relative hero"
             >
-                <div className="absolute inset-0" style={layerStyle(prevImage.current)} />
-                <div
-                    ref={frontRef}
-                    className="absolute inset-0"
-                    style={layerStyle(HOME[curentIndex].image)}
-                />
+                <div className="absolute inset-0">
+                    <Image
+                        src={prevImage.current}
+                        alt=""
+                        fill
+                        className="object-cover object-center"
+                        aria-hidden="true"
+                        sizes="100vw"
+                    />
+                </div>
+                <div ref={frontRef} className="absolute inset-0">
+                    <Image
+                        src={HOME[curentIndex].image}
+                        alt={HOME[curentIndex].title}
+                        fill
+                        priority={curentIndex === 0}
+                        className="object-cover object-center"
+                        sizes="100vw"
+                    />
+                </div>
 
                 <div className="brown-bg" />
                 <Navbar />

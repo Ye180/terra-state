@@ -1,9 +1,8 @@
 "use client";
+import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
+import Image from "next/image";
 import { useRef } from "react";
-
-import { layerStyle } from "@/components/shared/layer-styles";
 
 const Images = ({ image }: { image: string }) => {
     const container = useRef<HTMLDivElement>(null);
@@ -38,10 +37,25 @@ const Images = ({ image }: { image: string }) => {
             ref={container}
             className="w-full md:w-100 xl:w-160 aspect-square lg:aspect-5.5/4 overflow-hidden rounded-2xl relative feature-images"
         >
-            {/* Calque arrière : image précédente, visible pendant le fondu */}
-            <div className="absolute inset-0" style={layerStyle(prevImage.current)} />
-            {/* Calque avant : image courante, dont l'opacité est animée 0 -> 1 */}
-            <div ref={frontRef} className="absolute inset-0" style={layerStyle(image)} />
+            <div className="absolute inset-0">
+                <Image
+                    src={prevImage.current}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                    aria-hidden="true"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 400px, 640px"
+                />
+            </div>
+            <div ref={frontRef} className="absolute inset-0">
+                <Image
+                    src={image}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 400px, 640px"
+                />
+            </div>
             <div className="brown-bg" />
         </div>
     );

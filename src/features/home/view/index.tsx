@@ -1,10 +1,13 @@
-import AboutView from "../components/about";
-import Contact from "../components/contact";
-import Features from "../components/features";
-import Footer from "../components/footer";
+import dynamic from "next/dynamic";
+
 import HeroView from "../components/hero";
-import Inovative from "../components/inovative";
+import Footer from "../components/footer";
 import Service from "../components/service";
+
+const AboutView = dynamic(() => import("../components/about"));
+const Inovative = dynamic(() => import("../components/inovative"));
+const Features = dynamic(() => import("../components/features"));
+const Contact = dynamic(() => import("../components/contact"));
 
 function HomeView() {
     return (

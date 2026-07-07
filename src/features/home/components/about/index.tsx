@@ -1,9 +1,6 @@
 "use client";
+import { gsap, SplitText } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const AboutView = () => {
     useGSAP(() => {

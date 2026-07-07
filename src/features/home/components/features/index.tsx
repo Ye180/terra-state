@@ -1,14 +1,11 @@
 "use client";
+import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
 
 import { FEATURES } from "@/components/constants";
 import Descriptions from "./decriptions";
 import Images from "./images";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Features = () => {
     const [current, setCurrent] = useState(0);

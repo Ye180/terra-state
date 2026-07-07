@@ -1,4 +1,5 @@
 import { CheckCircleIcon } from "lucide-react";
+import Image from "next/image";
 
 const CardComponents = ({
     item,
@@ -7,15 +8,15 @@ const CardComponents = ({
 }) => {
     return (
         <div className="card-components">
-            <div
-                className=" container-card"
-                style={{
-                    backgroundImage: `url('${item.image}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                <div className="brown-bg"></div>
+            <div className=" container-card">
+                <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 20rem, (max-width: 1024px) 30rem, 30vw"
+                    />
+                <div className="brown-bg" />
                 <div className="description-card">
                     <h4 className="">{item.title}</h4>
                     <div className="text-[1.1rem] capitalize space-y-1.5 ">

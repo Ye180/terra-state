@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 import { SERVICES } from "@/components/constants";
 import {
@@ -13,15 +14,14 @@ const Service = () => {
     return (
         <section id="nos-services" className="h-fit lg:h-[70vh] service text-dark px-8 flex ">
             <div className="space-y-5">
-                <div
-                    className=" w-[95vw] max-lg:h-120 lg:w-120 lg:h-full aspect-square rounded-2xl relative overflow-hidden"
-                    style={{
-                        backgroundImage: `url('/assets/images/home-4.jpg')`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                >
+                <div className=" w-[95vw] max-lg:h-120 lg:w-120 lg:h-full aspect-square rounded-2xl relative overflow-hidden">
+                    <Image
+                        src="/assets/images/home-4.jpg"
+                        alt="Services Terra"
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 1024px) 95vw, 480px"
+                    />
                     <div className="brown-bg" />
                 </div>
 

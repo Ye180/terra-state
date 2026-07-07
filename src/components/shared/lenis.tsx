@@ -1,11 +1,8 @@
 "use client";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "@/lib/gsap";
 import Lenis from "lenis";
 import type { ReactNode } from "react";
 import { useEffect } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const LenisJSX = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
@@ -13,8 +10,6 @@ const LenisJSX = ({ children }: { children: ReactNode }) => {
             autoRaf: true,
             lerp: 0.15,
         });
-
-        // Listen for the scroll event and log the event data
         lenis.on("scroll", ScrollTrigger.update);
 
         return () => {
