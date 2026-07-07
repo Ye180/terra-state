@@ -248,7 +248,7 @@ body {
             @apply mx-auto p-12  w-full h-[90vh] lg:h-screen rounded-2xl relative overflow-hidden;
 
             h1 {
-                @apply font-normal text-white md:text-5xl lg:text-6xl tracking-tighter;
+                @apply font-normal text-white text-3xl md:text-5xl lg:text-6xl tracking-tighter;
             }
 
             .card-components {
