@@ -11,6 +11,7 @@ const LenisJSX = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         const lenis = new Lenis({
             autoRaf: true,
+            lerp: 0.15,
         });
 
         // Listen for the scroll event and log the event data

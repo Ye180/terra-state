@@ -21,7 +21,7 @@ const Footer = () => {
                     <div className="footer-grid">
                         <div className="footer-col">
                             <h5>Contactez-nous</h5>
-                            <a href={`tel:${FOOTER_CONTACT.phone.replace(/\s/g, "")}`}>
+                            <a href={`tel:${FOOTER_CONTACT.phone.replace(/\s/g, "")}`} className="whitespace-nowrap">
                                 {FOOTER_CONTACT.phone}
                             </a>
                         </div>

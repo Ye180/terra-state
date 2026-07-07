@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { HOME } from "@/components/constants";
 import { layerStyle } from "@/components/shared/layer-styles";
+import { CheckCircleIcon } from "lucide-react";
 import Navbar from "../nav";
 import NumberSection from "./number";
 
@@ -109,9 +110,9 @@ const HeroView = () => {
                         {HOME[curentIndex].feature.map((feature) => (
                             <p
                                 key={feature}
-                                className="gap-2 lg:bg-black px-4 lg:py-1 rounded-full"
+                                className="gap-2 lg:bg-black px-4 lg:py-1 rounded-xl flex items-center"
                             >
-                                <span className="point" />
+                                <CheckCircleIcon className="w-4 h-4" />
                                 <span>{feature}</span>
                             </p>
                         ))}

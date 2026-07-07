@@ -29,7 +29,7 @@ const Contact = () => {
 
     return (
         <section ref={containerContact} id="contact" className="contact">
-            <div className="container-contact " style={layerStyle("assets/images/home-5.jpg")}>
+            <div className="container-contact" style={layerStyle("assets/images/home-5.jpg")}>
                 <div className="brown-bg" />
 
                 <div className="card-contact formulaire">
@@ -41,8 +41,8 @@ const Contact = () => {
                         </p>
                     </div>
 
-                    <div className="space-y-4 text-dark ">
-                        <div className="grid-2-center">
+                    <div className="space-y-2 text-dark ">
+                        <div className="grid-1-center lg:grid-2-center">
                             <input type="text" placeholder="Enter votre email" />
                             <input type="text" placeholder="Enter votre message" />
                         </div>
@@ -50,11 +50,11 @@ const Contact = () => {
                         <div className="grid-2-center">
                             <textarea
                                 placeholder="Dites nous en plus sur votre projet..."
-                                rows={6}
+                                rows={5}
                                 className="col-span-2 resize-none"
                             />
                         </div>
-                        <div className="grid-2-center pt-6">
+                        <div className="grid-2-center lg:pt-6 pt-4">
                             <button
                                 type="button"
                                 className="col-span-2 w-full py-3 text-center! bg-secondary text-secondary-foreground hover:bg-footer hover:text-background aria-expanded:bg-secondary aria-expanded:text-secondary-foreground rounded-full cursor-pointer transition-all"

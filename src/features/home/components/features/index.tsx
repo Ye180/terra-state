@@ -52,9 +52,9 @@ const Features = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <section id="nos-caracteristiques" ref={container} className="features feature ">
+        <section id="nos-caracteristiques" ref={container} className="features feature">
             <Images image={FEATURES[current].image} />
-            <div className="w-3/7 flex flex-col justify-between text-dark">
+            <div className="w-full lg:w-3/7 flex flex-col justify-between text-dark">
                 <div className="title-section">
                     <p>Nos caracteristiques</p>
                 </div>

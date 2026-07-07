@@ -114,7 +114,6 @@ html,
 body {
     width: 100%;
     color: var(--color-background);
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
@@ -155,6 +154,10 @@ body {
 
     .col-start {
         @apply flex flex-col justify-center items-start;
+    }
+
+    .grid-1-center {
+        @apply grid grid-cols-1 place-items-center gap-x-4 gap-y-2;
     }
 
     .grid-2-center {
@@ -227,35 +230,35 @@ body {
     }
 
     .about {
-        @apply text-gray px-8 py-8 space-y-4 lg:py-28 lg:space-y-14 md:h-screen;
+        @apply text-gray px-8 py-8 space-y-4 h-screen place-content-center bg-background lg:py-28 lg:space-y-14;
 
         .description {
-            @apply text-[1.73rem] md:text-3xl lg:text-5xl leading-normal font-semibold;
+            @apply text-[1.4rem] md:text-3xl lg:text-5xl leading-snug lg:leading-normal font-semibold;
         }
     }
 
     .service {
-        @apply flex max-lg:gap-y-14 items-center lg:items-end justify-between max-lg:flex-col-reverse lg:px-8;
+        @apply flex max-lg:gap-y-14 items-center flex-col-reverse lg:flex-row lg:items-end justify-between  lg:px-8;
     }
 
     .inovative {
-        @apply px-8 h-screen py-10;
+        @apply px-2 lg:px-8 h-dvh;
 
         .container-inovation {
-            @apply mx-auto p-12 bg-amber-900 w-full h-screen rounded-2xl relative overflow-hidden;
+            @apply mx-auto p-12  w-full h-[90vh] lg:h-screen rounded-2xl relative overflow-hidden;
 
             h1 {
-                @apply font-normal text-white text-6xl tracking-tighter;
+                @apply font-normal text-white md:text-5xl lg:text-6xl tracking-tighter;
             }
 
             .card-components {
-                @apply flex flex-col gap-4 w-110 rounded-2xl aspect-4.5/5 relative overflow-hidden p-3 bg-white;
+                @apply flex flex-col gap-4 w-[20rem] md:w-[30rem] xl:w-[30vw] rounded-2xl h-[100%] relative overflow-hidden p-3 bg-white;
 
                 .container-card {
                     @apply size-full overflow-hidden bg-amber-900/50 rounded-lg relative flex flex-col items-end justify-end p-4;
 
                     .description-card {
-                        @apply bg-white text-dark w-2/3 h-1/2 rounded-lg overflow-hidden flex flex-col justify-between p-4 relative z-20;
+                        @apply bg-white text-dark h-2/3 md:w-3/4 md:h-1/2 rounded-lg overflow-hidden flex flex-col justify-between p-4 relative z-20;
 
                         h4 {
                             @apply text-[0.9rem] font-semibold;
@@ -268,25 +271,25 @@ body {
     }
 
     .feature {
-        @apply px-8 py-24 flex justify-around;
+        @apply px-3 lg:px-8 py-24 flex justify-between max-lg:flex-col max-lg:space-y-8;
 
         .title-words {
-            @apply text-4xl text-gray font-normal border-b-2 border-gray-300 py-6 w-full;
+            @apply text-xl py-4 md:text-2xl lg:text-3xl xl:text-4xl text-gray font-normal border-b-2 border-gray-300 md:py-6 w-full;
         }
     }
 
     .contact {
-        @apply px-8 py-2 flex justify-around h-[90vh];
+        @apply px-3 lg:px-8 py-2 flex justify-around h-[90vh];
 
         .container-contact {
-            @apply w-full h-full rounded-2xl relative overflow-hidden place-content-center place-items-center;
+            @apply w-full h-full rounded-2xl relative overflow-hidden place-content-center place-items-center max-lg:px-4;
         }
 
         .card-contact {
-            @apply flex flex-col gap-4 w-1/3 rounded-2xl h-[70%] relative overflow-hidden p-3 bg-none border-18 border-white z-40 place-content-center;
+            @apply flex flex-col gap-4 w-full lg:w-1/3 rounded-2xl h-[80%] lg:h-[70%] relative overflow-hidden p-3 bg-none border-4 lg:border-18 border-white z-40 place-content-center;
 
             input {
-                @apply w-full h-12 rounded-lg bg-white border border-gray-300 px-4 focus:outline-none focus:ring-0;
+                @apply w-full h-10  lg:h-12 rounded-lg bg-white border border-gray-300 px-4 focus:outline-none focus:ring-0;
 
                 &::placeholder {
                     @apply text-gray-400;
@@ -304,10 +307,10 @@ body {
     }
 
     .footer {
-        @apply px-8 mb-12;
+        @apply px-3 lg:px-8 mb-12 ;
 
         .container-footer {
-            @apply bg-footer text-background rounded-2xl p-8 lg:p-14 flex flex-col gap-12;
+            @apply bg-footer text-background rounded-2xl max-lg:p-6 lg:p-14 flex flex-col gap-12;
         }
 
         .footer-top {
@@ -338,7 +341,7 @@ body {
             }
 
             a {
-                @apply text-gray hover:text-white transition-colors w-fit;
+                @apply text-gray hover:text-white transition-colors w-fit ;
             }
 
             span {

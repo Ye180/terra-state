@@ -17,7 +17,7 @@ const Descriptions = ({
     };
 
     return (
-        <>
+        <div className="space-y-3 lg:space-y-6">
             <div className="col-start gap-y-2">
                 {items?.map((item) => (
                     <p
@@ -39,8 +39,8 @@ const Descriptions = ({
                     </p>
                 ))}
             </div>
-            <div className="w-full text-footer">{items[curentIndex].description}</div>
-        </>
+            <div className="w-full text-footer max-lg:pt-6 ">{items[curentIndex].description}</div>
+        </div>
     );
 };
 

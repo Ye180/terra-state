@@ -13,11 +13,12 @@ const AboutView = () => {
             scrollTrigger: {
                 trigger: "#a-propos-de-nous",
                 start: "top top",
-                end: "bottom +600px",
-                // markers: true,
+                end: "bottom top",
                 toggleActions: "restart pause reverse none",
                 scrub: true,
                 pin: true,
+                invalidateOnRefresh: true,
+                anticipatePin: 1,
             },
             color: "#1a1a1a",
             stagger: 0.1,
@@ -42,6 +43,7 @@ const AboutView = () => {
                     énergie à faible empreinte carbone.
                 </div>
             </div>
+
         </section>
     );
 };

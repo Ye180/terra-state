@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 const Service = () => {
     return (
-        <section id="nos-services" className="h-[70vh] service text-dark px-16 flex ">
+        <section id="nos-services" className="h-fit lg:h-[70vh] service text-dark px-8 flex ">
             <div className="space-y-5">
                 <div
                     className=" w-[95vw] max-lg:h-120 lg:w-120 lg:h-full aspect-square rounded-2xl relative overflow-hidden"
@@ -30,7 +30,7 @@ const Service = () => {
                 </Button>
             </div>
 
-            <div className="h-130 flex flex-col justify-between ">
+            <div className="h-fit lg:h-130 flex flex-col justify-between">
                 <div className="title-section">
                     <p>Nos Services</p>
                 </div>
@@ -38,7 +38,7 @@ const Service = () => {
                     type="single"
                     collapsible
                     defaultValue="service-1"
-                    className="w-[95vw] lg:w-120 space-y-2 "
+                    className="w-[95vw] lg:w-150 space-y-2 "
                 >
                     {SERVICES.map((service, index) => (
                         <AccordionItem

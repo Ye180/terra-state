@@ -166,7 +166,7 @@ export const NAV_ITEMS = [
 ];
 
 export const FOOTER_CONTACT = {
-    phone: "+225 01 02 03 04 05",
+    phone: "+225 01 01 01 01 01",
     email: "terra@gmail.com",
     address: ["Abidjan, Côte d'Ivoire", "Plateau, Quartier 2"],
 };

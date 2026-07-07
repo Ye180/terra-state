@@ -8,7 +8,7 @@ import Service from "../components/service";
 
 function HomeView() {
     return (
-        <div className="flex flex-col flex-1 font-sans  space-y-14">
+        <div className="flex-1 font-sans  space-y-14">
             <HeroView />
             <AboutView />
             <Service />

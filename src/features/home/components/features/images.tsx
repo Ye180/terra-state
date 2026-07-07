@@ -36,7 +36,7 @@ const Images = ({ image }: { image: string }) => {
     return (
         <div
             ref={container}
-            className="w-160 aspect-5.5/4 overflow-hidden rounded-2xl relative feature-images"
+            className="w-full md:w-100 xl:w-160 aspect-square lg:aspect-5.5/4 overflow-hidden rounded-2xl relative feature-images"
         >
             {/* Calque arrière : image précédente, visible pendant le fondu */}
             <div className="absolute inset-0" style={layerStyle(prevImage.current)} />

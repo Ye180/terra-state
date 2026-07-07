@@ -1,3 +1,5 @@
+import { CheckCircleIcon } from "lucide-react";
+
 const CardComponents = ({
     item,
 }: {
@@ -18,8 +20,9 @@ const CardComponents = ({
                     <h4 className="">{item.title}</h4>
                     <div className="text-[1.1rem] capitalize space-y-1.5 ">
                         {item.description.map((desc: string) => (
-                            <p key={item.id + desc} className="line-clamp-1" title={desc}>
-                                {desc}
+                            <p key={item.id + desc} className=" text-[0.8rem] flex items-center gap-2" title={desc}>
+                                <span><CheckCircleIcon size={16} /></span>
+                                <span>{desc}</span>
                             </p>
                         ))}
                     </div>
