@@ -6,7 +6,7 @@ import { SOCIAL_ICONS } from "./socials";
 
 const Footer = () => {
     return (
-        <footer className="footer ">
+        <footer className="footer">
             <div className="container-footer">
                 <div className="footer-top">
                     <div className="footer-intro">

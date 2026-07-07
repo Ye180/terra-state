@@ -307,7 +307,7 @@ body {
     }
 
     .footer {
-        @apply px-3 lg:px-8 mb-12 ;
+        @apply px-3 mb-4 lg:px-8 lg:mb-12;
 
         .container-footer {
             @apply bg-footer text-background rounded-2xl max-lg:p-6 lg:p-14 flex flex-col gap-12;
