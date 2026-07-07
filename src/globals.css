@@ -114,6 +114,7 @@ html,
 body {
     width: 100%;
     color: var(--color-background);
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
