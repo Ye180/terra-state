@@ -230,7 +230,7 @@ body {
     }
 
     .about {
-        @apply text-gray px-8 py-8 space-y-4 h-screen place-content-center bg-background lg:py-28 lg:space-y-14;
+        @apply text-gray px-3 py-8 space-y-4 h-screen place-content-center bg-background lg:py-28 lg:space-y-14;
 
         .description {
             @apply text-[1.4rem] md:text-3xl lg:text-5xl leading-snug lg:leading-normal font-semibold;
@@ -258,7 +258,7 @@ body {
                     @apply size-full overflow-hidden bg-amber-900/50 rounded-lg relative flex flex-col items-end justify-end p-4;
 
                     .description-card {
-                        @apply bg-white text-dark h-2/3 md:w-3/4 md:h-1/2 rounded-lg overflow-hidden flex flex-col justify-between p-4 relative z-20;
+                        @apply bg-white text-dark h-2/3 w-full md:w-3/4 md:h-1/2 rounded-lg overflow-hidden flex flex-col justify-between p-4 relative z-20;
 
                         h4 {
                             @apply text-[0.9rem] font-semibold;
