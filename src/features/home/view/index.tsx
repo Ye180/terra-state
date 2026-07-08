@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
-import HeroView from "../components/hero";
 import Footer from "../components/footer";
+import HeroView from "../components/hero";
 import Service from "../components/service";
 
 const AboutView = dynamic(() => import("../components/about"));

@@ -102,6 +102,7 @@ const HeroView = () => {
                         className="object-cover object-center"
                         aria-hidden="true"
                         sizes="100vw"
+                        priority
                     />
                 </div>
                 <div ref={frontRef} className="absolute inset-0">
